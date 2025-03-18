@@ -16,7 +16,7 @@ Here are the steps to setup the build environment:
 
 1. Make sure you have the command line programs `git` and `node`
 2. Clone the application repository (this one or using the GitHub template to make your own copy): `git clone https://github.com/oskariorg/sample-application.git`
-3. Run `npm install` on the `sample-application` folder
+3. Run `npm install` on the `sample-application` folder. You will need read & write access to locale files, so running Node as adminstrator is advised.
 
 Versions:
 - `nodejs` version 16.12.0 or greater (recommended 20)
@@ -24,8 +24,10 @@ Versions:
 
 ## Creating your own Oskari application
 
-You can customize the application by selecting any `bundles` from `oskari-frontend` that provide functionality and/or add your own
- application-specific bundles/code that provide any customized functionality you might need.
+After you've done the basic setup as instructed above, you can customize the application before building it. 
+
+Customization can be done by selecting any `bundles` from `oskari-frontend` that provide functionality and/or adding your own
+application-specific bundles/code that provide any customized functionality you might need.
 
 The main codebase for Oskari-based frontend can be found on https://github.com/oskariorg/oskari-frontend.
 However this repository is the recommended way for setting up and customizing applications.
@@ -35,7 +37,8 @@ The `oskari-frontend` repository is used as a library for this one and brings in
 - selection of `bundles` that offer functional building blocks that can be imported as part of the application.
 - Webpack build configuration and scripts
 
-After you have done the basic setup (above) and any customization changes you would like to make, the application can be built directly from this repo with `npm run build`.
+**After you have done the basic setup (above) and any customization changes you would like to make, the application can be built directly from this repo with `npm run build`.**
+
 The build process generates output under `dist/[version]` folder where `[version]` is from [package.json](package.json) file.
 
 Special case: If on your production server your application index.jsp location is mapped to something else than the root (eg. `https://yourdomain.com/my-oskari-app/`), but the assets are mapped relative to the root (eg. `https://yourdomain.com/Oskari/dist/...`), you need to add the build parameter `--env absolutePublicPath=true` like this: `npm run build -- --env absolutePublicPath=true`.
@@ -43,7 +46,7 @@ Special case: If on your production server your application index.jsp location i
 ### Development server
 
 Instead of building the application with `npm run build` you can run `npm start` to start a Webpack dev server on `http://localhost:8081` with auto reload for JS and hot reload for SCSS.
-This can be used when developing the frontend application and assumes that you have the server running on localhost:8080.
+This can be used when developing the frontend application and assumes that you have [the server](https://github.com/oskariorg/oskari-server/) running on localhost:8080.
 
 ### App composition
 
