@@ -15,7 +15,7 @@ This way the dev server has automatic reloading enabled for the application AND 
 
 The `npm run build:dev` generates the usual build products under the `dist` folder.
 
-On either case you will also need a oskari-server based server webapp to be running that responds to the XHR requests made by the frontend.
+On either case you will also need a [oskari-server](https://github.com/oskariorg/oskari-server/) based server webapp to be running that responds to the XHR requests made by the frontend.
 
 ## Server-side functionality
 
